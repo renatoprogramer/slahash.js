@@ -7,8 +7,8 @@ var Slahash = function () {
         $(document).on('keyup', 'input[class=slahash]', function (e) {
             var address = this.value;
             if (/^[a-zA-Z0-9_.-]+\@[a-zA-Z0-9_.-]+\.[a-z0-9]{3}$/.test(address)) {
-                $('.slahash-btn').html('<button class="slahash-btn-style" id="slahash-btn-check">Check address</button>');
-                $(document).on('click', '#slahash-btn-check', function (e) {
+                $('.slahash-btn').html('<button class="slahash-btn-style" id="slahash-btn-check">Slahash</button>');
+                $('#slahash-btn-check').click(function (e) {
                     var xhr = new XMLHttpRequest();
                     xhr.open('GET', 'https://slahash.com/address.php?address=' + address + '&format=json');
                     xhr.addEventListener('loadstart', function () {
@@ -38,5 +38,3 @@ var Slahash = function () {
 new Slahash();
 
 },{}]},{},[1])
-
-//# sourceMappingURL=bundle.js.map
